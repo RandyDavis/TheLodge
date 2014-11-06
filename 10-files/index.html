@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <ul id="one">
+    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+    <li>Aliquam tincidunt mauris eu risus.</li>
+    <li>Vestibulum auctor dapibus neque.</li>
+  </ul>  
+
+  <ul id="two">
+    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+    <li>Aliquam tincidunt mauris eu risus.</li>
+    <li>Vestibulum auctor dapibus neque.</li>
+  </ul>  
+
+
+  <script src="js/jquery-2.1.1.js"></script>
+  <script>
+    $("#one li").css("color", "orange"); // <--- Implicit
+
+    $("#two li").each(function(i) {      // <--- Explicit
+      
+      var el = $(this);                 // Use Caching for repeated elements
+      var text = el.text();             // Cache again
+      
+      var numChars = text.length;  // Getter
+      
+      el.text(
+        text +
+        " (" + numChars + " characters)"
+      )
+      
+    });
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
