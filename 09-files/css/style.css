@@ -1,0 +1,10 @@
+.module {
+  width: 290px;
+  border: 1px solid gray;
+  padding: 1rem;
+  margin: 1rem
+}
+
+*{
+  box-sizing: border-box;
+}
