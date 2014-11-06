@@ -1,0 +1,15 @@
+code {
+  background: #ccc;
+  padding: 2px;
+}
+
+ pre {
+  background: #222;
+  color: white;
+  padding: 10px;
+} 
+
+pre code {
+  background: none;
+  padding: 0;
+}
