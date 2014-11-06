@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav role='navigation'>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Clients</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>  
+  <a href="#jump">Jump Down</a>
+
+  <div id="jump">I'm here</div>
+
+
+  <script src="js/jquery-2.1.1.js"></script>
+  <script>
+    // Active Class Demo
+    $("nav a").on("click", function() {
+  $("nav a").removeClass("active");
+  
+  $(this).addClass("active");
+})
+  </script>
+  <script>
+    $("a").on("click", function(event) {
+      
+      
+      // event.preventDefault();
+      // event.stopPropagation();
+      // return false;
+      
+      console.log("clicked on anchor");
+    });
+
+    $("li").on("click", function(event) {
+      console.log("clicked on list element");
+      // event.stopPropagation();
+    })
+
+    $("ul").on("click", function(event) {
+      console.log("clicked on unordered list");
+    });
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
