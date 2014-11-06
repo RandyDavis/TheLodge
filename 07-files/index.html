@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Active Class Example -->
+  <nav role='navigation'>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Clients</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <br><br>
+
+  <!-- Forked Codepen CC Demo -->
+  <a href="#credit-details" id="edit-cc-info-button">Edit Credit Card Information</a>
+  <form action='' id='credit-details'>
+    <div class='flip'>
+      <div class='flip-inner'>
+        <div class='flip-content flip-content--front'>
+          <div class='creditCard'>
+            <div class='grid creditCard-header'>
+              <div class='grid-box grid-box--1of3'>
+                <h3 class='creditCard-title'>Credit Card</h3>
+              </div>
+              <div class='grid-box grid-box--2of3'>
+                <ul class='creditCard-types'>
+                  <li class='creditCard-type'>
+                    <img alt='' src='http://s.cdpn.io/5734/visa.png'>
+                  </li>
+                  <li class='creditCard-type'>
+                    <img alt='' src='http://s.cdpn.io/5734/mastercard.png'>
+                  </li>
+                  <li class='creditCard-type'>
+                    <img alt='' src='http://s.cdpn.io/5734/american-express.png'>
+                  </li>
+                  <li class='creditCard-type'>
+                    <img alt='' src='http://s.cdpn.io/5734/discover.png'>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='creditCard-field'>
+              <label class='creditCard-label' for='name'>Name on Card</label>
+              <input class='creditCard-input is-required' name='name' placeholder='Jonathan Doe' type='text'>
+            </div>
+            <div class='grid l-space'>
+              <div class='grid-box grid-box--3of4'>
+                <div class='creditCard-field'>
+                  <label class='creditCard-label' for='number'>Credit Card Number</label>
+                  <input class='creditCard-input is-required' name='number' placeholder='0000 0000 0000 0000' type='text'>
+                </div>
+              </div>
+              <div class='grid-box grid-box--1of4'>
+                <div class='creditCard-field has-creditCard-field-help'>
+                  <label class='creditCard-label' for='cvv'>
+                    Code (CVV)
+                    <a class='creditCard-field-help flip-toggle' href='#'>?</a>
+                  </label>
+                  <input class='creditCard-input is-required' name='code' placeholder='123' type='text'>
+                </div>
+              </div>
+            </div>
+            <div class='grid'>
+              <div class='grid-box grid-box--1of2'>
+                <div class='creditCard-field'>
+                  <label class='creditCard-label' for='date'>Expiration Date</label>
+                  <select class='creditCard-select'>
+                    <option value='8'>8 - August</option>
+                  </select>
+                  <select class='creditCard-select'>
+                    <option value='2013'>2013</option>
+                  </select>
+                </div>
+              </div>
+              <div class='grid-box grid-box--1of2'>
+                <label class='creditCard-label' for='zip'>Zip Code</label>
+                <input class='creditCard-input is-required' name='zip' placeholder='123456' type='text'>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='flip-content flip-content--back'>
+          <div class='creditCard creditCard--back'>
+            <a class='l-block l-space creditCard-close flip-toggle' href='#'>x</a>
+            <div class='creditCard-header creditCard-header--fixed'></div>
+            <div class='creditCard-input creditCard-input--fixed'>
+              <span class='c-right'>123</span>
+              <em class='creditCard-highlight'></em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+
+
+  <script src="js/jquery-2.1.1.js"></script>
+  <script>
+    // Active Class Demo
+    $("nav a").on("click", function() {
+  $("nav a").removeClass("active");
+  
+  $(this).addClass("active");
+})
+  </script>
+  <script>
+    // CC Demo
+    $("#edit-cc-info-button").on("click", function(event) {
+      
+      console.log(event);
+      
+      // toggle = 
+      //   show if hidden 
+      //   hide if shown
+      
+      $("#credit-details").slideToggle();
+      
+      event.preventDefault();
+    });
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
