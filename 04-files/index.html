@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>jQuery Selectors are CSS3 Selectors</h1>
+
+  <dl class="list" id="list">
+    <dt>Term</dt>
+    <dd>Definition</dd>
+    <dd>Definition</dd>
+    <dd>Definition</dd>
+    <dt>Term</dt>
+    <dd>Definition</dd>
+    <dt>Term</dt>
+    <dd>Definition</dd>
+    <dt>Term</dt>
+    <dd id="foo">Definition</dd>
+  </dl>
+
+  <input type="checkbox" />
+  <input type="checkbox" checked />
+
+
+
+  <script src="js/jquery-2.1.1.js"></script>
+  <script>
+    $("body").css("background", "pink");
+
+    $(".list").show();
+
+    $("#list dt").show();
+
+    $("dt:nth-of-type(2)").html("<span>I'm</span> the second definition term!!!");
+
+    $("dt span").css("font-size", "48px");
+  </script>
+
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
