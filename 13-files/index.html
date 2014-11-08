@@ -6,37 +6,84 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <button>animate!</button>
+  <div id="scope">
+    <textarea></textarea>
+  </div>
 
-  <div></div>
+  <button>add textarea</button>
 
 
   <script src="js/jquery-2.1.1.js"></script>
   <script>
-    $("button").on("click", moveBox);
+    // CLICK EVENT
+    $("#scope").on("click", "textarea", function(event) {
+      console.log(event);
+    });
 
-    function moveBox() {
-      $("div").slideUp(2000, doneSliding);
-    };
+    // CLICK EVENT via .one
+    /*$("#scope").one("click", "textarea", function(event) {
+      console.log(event);
+    });*/
 
-    function doneSliding() {
-      alert("hi, i'm done sliding!");
-    }
+    // UNBIND EVENT
+    /*$("#scope").off("click", "textarea");*/
 
-    // Animation with callback functions
-    /*function moveBox() {
-      $("div").animate({
-          "top": 20,
-          "left": 20
-      }, 2000, function() {
-        $("div").animate({
-            "top": 0,
-            "left": 0
-        }, function() {
-          alert("hi!");
-        });
-      });
-    }*/
+    // CLICK EVENTS FOR MULTIPLE ELEMENTS via namespacing
+    /*$("#scope").on("click.one", "textarea", function(event) {
+      console.log(event);
+    });
+
+    $("#scope").on("click.two", "textarea", function(event) {
+      console.log(event);
+    });*/
+
+    // DBL CLICK EVENT
+    /*$("#scope").on("dblclick", "textarea", function() {
+      console.log(event);
+    });*/
+
+    // MOUSEDOWN EVENT
+    /*$("#scope").on("mousedown", "textarea", function() {
+      console.log(event);
+    });*/
+
+    // MOUSEUP EVENT
+    /*$("#scope").on("mouseup", "textarea", function() {
+      console.log(event);
+    });
+    */
+
+    // MOUSEENTER EVENT
+    /*$("#scope").on("mouseenter", "textarea", function() {
+      console.log(event);
+    });*/
+
+    // MOUSEOVER EVENT
+    /*$("#scope").on("mouseover", "textarea", function() {
+      console.log(event);
+    });*/
+
+    // KEYDOWN EVENT ... can add KEYUP in same event
+    /*$("#scope").on("keydown keyup", "textarea", function() {
+      console.log(event);
+    });
+    */
+
+    // BLUR EVENT
+    /*$("#scope").on("blur", "textarea", function() {
+      console.log(event);  
+    });*/
+
+    // CHANGE EVENT
+    $("#scope").on("change", "textarea", function() {
+      console.log(event);
+    });
+
+    $("button").on("click", function() {
+      
+      $("<textarea />").appendTo("#scope");
+      
+    });
   </script>
   <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
