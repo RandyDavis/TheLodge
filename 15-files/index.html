@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.1.1.js"></script>
+</head>
+<body>
+  <nav role="navigation">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Client</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  
+  <script>
+    var $nav = 
+        $("nav[role='navigation']")
+          .find("li")
+          .find("a")
+          .css({"color": "red"})
+          .end()
+          .eq(1)
+          .hide()
+          .end();
+      
+
+    console.log($nav);
+
+    $nav
+      .slideUp()
+      .end();
+
+    // Chaining events
+    $("a")
+      .on("click", function() {
+      
+      })
+      .on("blur", function() {
+      
+      });
+
+
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
