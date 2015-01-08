@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.1.1.js"></script>
+</head>
+<body>
+  
+  <script>
+    $.getJSON(
+      "http://codepen.io/chriscoyier/pen/EAIJj.js",
+      function(data) {
+
+        // Success! Do stuff with data.
+        console.log(data);
+        console.log(data.name);
+    });
+
+
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
