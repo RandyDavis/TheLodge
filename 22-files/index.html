@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.1.1.js"></script>
+</head>
+<body>
+  <section id="movies">
+    <h2>List of Movies</h2>
+    <!-- Append Movies Here -->
+    
+  </section>
+
+  
+  <script>
+    var data = {
+      movies: [
+        {
+          movieTitle: "Ender's Game",
+          movieDirector: "Gavin Hood",
+          movieImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/movie-endersgame.jpg"
+        }, {
+          movieTitle: "The Fifth Estate",
+          movieDirector: "Bill Condon",
+          movieImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/movie-thefifthestate.jpg"
+        }, {
+          movieTitle: "Escape Plan",
+          movieDirector: "Mikael Håfström",
+          movieImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/movie-escapeplan.jpg"
+        }
+      ]
+    };
+
+    var i;
+
+    // display logic
+    for (i = 0; i < data.movies.length; i++) {
+      
+      // template
+      $("<div />", {
+        class: "module module-movie",
+        html: 
+          "<div class='movie-info'>" +
+            "<h3 class='movie-title'>" +
+               data.movies[i].movieTitle +
+            "</h3>" +
+            "<p class='movie-director'>" + 
+               data.movies[i].movieDirector + 
+            "</p>" + 
+          "</div>",
+        css: {
+          "background-image": "url(" + data.movies[i].movieImage + ")"
+        },
+        // business logic
+        click: function() {
+          alert("movie added");
+        }
+      }).appendTo("#movies");
+        
+    }  
+
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
