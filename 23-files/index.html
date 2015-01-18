@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning jQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+</head>
+<body>
+  <section id="movies">
+    <h2>List of Movies</h2>
+    <!-- Append Movies Here -->
+    
+  </section>
+
+  <script id="movie-template" type="text/x-handlebars-template">
+    <div class="module module-movie" style='background-image: url({{movieImage}})'>
+      <div class='movie-info'>
+        <h3 class='movie-title'>
+          {{ movieTitle }} 
+        </h3>
+        <p class='movie-director'> 
+          {{ movieDirector }}
+        </p> 
+      </div>
+    </div>
+  </script>
+
+  <script>
+    var data = {
+      movies: [
+        {
+          movieTitle: "Ender's Game",
+          movieDirector: "Gavin Hood",
+          movieImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/movie-endersgame.jpg"
+        }, {
+          movieTitle: "The Fifth Estate",
+          movieDirector: "Bill Condon",
+          movieImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/movie-thefifthestate.jpg"
+        }, {
+          movieTitle: "Escape Plan",
+          movieDirector: "Mikael Håfström",
+          movieImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/movie-escapeplan.jpg"
+        }
+      ]
+    };
+
+    var i;
+
+    var source = $("#movie-template").html();
+    var template = Handlebars.compile(source);
+
+    console.log(template);
+
+    // Event Handling
+    $(document).on("click", ".module-movie", function() {
+      alert("movie added to list");
+    });
+
+    // display logic
+    for (i = 0; i < data.movies.length; i++) {
+      var html = template(data.movies[i]);
+      $("#movies").append(html);
+
+    }
+  </script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
